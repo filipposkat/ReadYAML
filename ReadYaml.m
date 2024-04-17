@@ -20,8 +20,8 @@ for i = 1:numel(data)
     % extract this line
     thisLine = data{i};
     
-    % ignore if this line is a comment
-    if strcmpi(thisLine(1), '#')
+    % ignore if this line is a comment, start or end of document
+    if strcmpi(thisLine(1), '#') || strcmpi(thisLine(1:3), '---') || strcmpi(thisLine(1:3), '...')
         continue
     end
     
